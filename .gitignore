@@ -27,5 +27,3 @@ hs_err_pid*
 /node_modules/
 /.gradle/
 /out/
-# Default ignored files
-/learning_new.iws

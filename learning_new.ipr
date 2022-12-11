@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ArtifactManager">
-    <artifact type="exploded-war" name="Gradle : learning_new-master.war (exploded)">
-      <output-path>$PROJECT_DIR$/build/libs/exploded/learning_new-master.war</output-path>
+    <artifact type="exploded-war" name="Gradle : Project_one.war (exploded)">
+      <output-path>$PROJECT_DIR$/build/libs/exploded/Project_one.war</output-path>
       <properties id="gradle-properties">
         <options external-project-path="$PROJECT_DIR$">
           <buildTaskPath>:war_exploded</buildTaskPath>
@@ -12,12 +12,12 @@
       </properties>
       <root id="root">
         <element id="directory" name="META-INF">
-          <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/learning_new-master.war/META-INF/MANIFEST.MF" />
+          <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/Project_one.war/META-INF/MANIFEST.MF" />
         </element>
-        <element id="javaee-facet-resources" facet="learning_new-master.main/web/Web Gradle : learning_new-master.war" />
+        <element id="javaee-facet-resources" facet="Project_one.main/web/Web Gradle : Project_one.war" />
         <element id="directory" name="WEB-INF">
           <element id="directory" name="classes">
-            <element id="module-output" name="learning_new-master.main" />
+            <element id="module-output" name="Project_one.main" />
             <element id="dir-copy" path="$PROJECT_DIR$/out/production/resources" />
           </element>
           <element id="directory" name="lib">
@@ -65,7 +65,7 @@
         </element>
       </root>
     </artifact>
-    <artifact type="war" name="Gradle : learning_new-master.war">
+    <artifact type="war" name="Gradle : Project_one.war">
       <output-path>$PROJECT_DIR$/build/libs</output-path>
       <properties id="gradle-properties">
         <options external-project-path="$PROJECT_DIR$">
@@ -73,8 +73,8 @@
           <cleanTaskPath>:cleanWar</cleanTaskPath>
         </options>
       </properties>
-      <root id="archive" name="learning_new-master.war">
-        <element id="artifact" artifact-name="Gradle : learning_new-master.war (exploded)" />
+      <root id="archive" name="Project_one.war">
+        <element id="artifact" artifact-name="Gradle : Project_one.war (exploded)" />
       </root>
     </artifact>
   </component>
@@ -93,7 +93,7 @@
   </component>
   <component name="CopyrightManager" default="" />
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="@localhost" uuid="c804e47c-6580-400f-87af-99b4bf765292">
+    <data-source source="LOCAL" name="@localhost" uuid="a602df46-da02-4f27-999f-bb12f8b43152">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
@@ -117,6 +117,7 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="liberica-1.8" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -141,15 +142,112 @@
   <component name="JavadocGenerationManager">
     <option name="OTHER_OPTIONS" value="" />
   </component>
+  <component name="JpaBuddyIdeaProjectConfig">
+    <option name="renamerInitialized" value="true" />
+  </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/learning_new-master.iml" filepath="$PROJECT_DIR$/learning_new-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/learning_new-master.main.iml" filepath="$PROJECT_DIR$/learning_new-master.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/learning_new-master.test.iml" filepath="$PROJECT_DIR$/learning_new-master.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Project_one.iml" filepath="$PROJECT_DIR$/Project_one.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Project_one.main.iml" filepath="$PROJECT_DIR$/Project_one.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Project_one.test.iml" filepath="$PROJECT_DIR$/Project_one.test.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="Tomcat 8.5.84" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" editBeforeRun="true" APPLICATION_SERVER_NAME="Tomcat 8.5.84" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Gradle : Project_one.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="c7dbb57e-8565-4df2-a113-809e9e371161" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50920" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : Project_one.war" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="jpab" />
   </component>
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
@@ -178,9 +276,6 @@
       <option name="url" value="https://jcenter.bintray.com/" />
     </remote-repository>
   </component>
-  <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/users.sql" dialect="MySQL" />
-  </component>
   <component name="SvnBranchConfigurationManager">
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
@@ -188,20 +283,16 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
   <component name="dataSourceStorageLocal" created-in="IU-222.3739.54">
-    <data-source name="@localhost" uuid="c804e47c-6580-400f-87af-99b4bf765292">
+    <data-source name="@localhost" uuid="a602df46-da02-4f27-999f-bb12f8b43152">
       <database-info product="MySQL" version="8.0.30" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MYSQL" exact-version="8.0.30" exact-driver-version="8.0">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
+      <user-name>Manager</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema">
-            <name qname="@" />
-            <name qname="users" />
-          </node>
+          <node kind="schema" qname="users" />
         </introspection-scope>
       </schema-mapping>
     </data-source>

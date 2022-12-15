@@ -1,22 +1,21 @@
-package com.learning.web;
+package com.learning.entity;
+
+import groovy.transform.builder.Builder;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
-public class Post {
-    private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+public class Post {
     private Long id;
     private String title;
     private String anons;
     private String ful_text;
     private int views;
 
+    private boolean enabled;
     public Long getId() {
         return id;
     }
@@ -55,5 +54,9 @@ public class Post {
 
     public void setViews(int views) {
         this.views = views;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
     }
 }

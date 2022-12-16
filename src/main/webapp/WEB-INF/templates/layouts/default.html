@@ -22,6 +22,10 @@
                   <li><a sec:authorize="hasRole('ROLE_ADMIN')" href="/user/users.html">Пользователи</a></li>
             </ul>
 
+            <ul class="nav navbar-nav">
+                  <li><a sec:authorize="hasRole('ROLE_ADMIN')" href="/blog_add.html">Посты</a></li>
+            </ul>
+
             <ul class="nav navbar-nav navbar-right">
                   <li><a sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')"
                          href="/logout.html">Выход <span sec:authentication="name"></span></a></li>

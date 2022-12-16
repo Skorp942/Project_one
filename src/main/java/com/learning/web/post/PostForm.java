@@ -6,13 +6,13 @@ import com.learning.util.paginated.SimplePaginatedForm;
  * Created by ulyanov on 29.09.16.
  */
 public class PostForm extends SimplePaginatedForm {
-    private String title;
+    private String post;
 
-    public String getTitle() {
-        return title;
+    public String getPost() {
+        return post;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setPost(String post) {
+        this.post = post;
     }
 }

@@ -12,11 +12,10 @@ public class PostMapper implements RowMapper<Post> {
     public Post mapRow(final ResultSet rs, final int rowNum) throws SQLException {
         Post post = new Post();
 
-        post.setId(rs.getLong("id"));
+        post.setId(rs.getInt("id"));
         post.setTitle(rs.getString("title"));
         post.setAnons(rs.getString("anons"));
         post.setFul_text(rs.getString("ful_text"));
-        post.setViews(rs.getInt("views"));
 
         return post;
     }

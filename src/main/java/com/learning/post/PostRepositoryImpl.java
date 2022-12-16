@@ -2,11 +2,12 @@ package com.learning.post;
 
 import com.learning.dao.mapper.UserMapper;
 import com.learning.entity.Post;
-import com.learning.entity.User;
 import com.learning.post.mapper.PostMapper;
 import com.learning.util.paginated.PaginatedListHelper;
 import com.learning.util.paginated.SimplePaginatedList;
 import com.learning.web.post.PostForm;
+import com.learning.web.user.UsersForm;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
@@ -17,9 +18,12 @@ import java.util.List;
 @Repository("PostRepository")
 public class PostRepositoryImpl extends BasePostImpl implements PostRepository {
 
-
-    public SimplePaginatedList getTitle(PostForm form){
-        String sql = "select count(distinct p.title) from post p";
+    public SimplePaginatedList getPost (PostForm form){
+        String sql = "select count(distinct u.id) from post u";
+        String filt = "";
+        if (StringUtils.isNotBlank(form.getPost()))
+            filt += " where u.title LIKE '%" + form.getPost() + "'%";
+        sql = sql + filt;
         int total = -1;
         if (form.getPageSize() != -1) {
             total = getJdbcTemplate().queryForObject(sql, Integer.class);
@@ -28,7 +32,7 @@ public class PostRepositoryImpl extends BasePostImpl implements PostRepository {
 
         StringBuilder sql2 = new StringBuilder();
 
-        sql2.append("select * from post p ");
+        sql2.append("select * from title u " + filt);
 
         if (form.getPageSize() > 0) {
             sql2.append(" \nlimit ");
@@ -44,28 +48,36 @@ public class PostRepositoryImpl extends BasePostImpl implements PostRepository {
         return PaginatedListHelper.getPaginatedList(list, total, form);
     }
 
+    public Post getPostById(Integer Id) {
+        PostMapper postmapper = new PostMapper();
+        String sql = "select * from post where id = ?";
+        List list = getJdbcTemplate().query(sql, postmapper, new Object[]{Id});
+        if (list.isEmpty()){
+            return null;
+        }else {
+            return (Post)list.get(0);
+        }
+    }
+
     public void saveOrUpdate(final Post post) {
-        if(post!=null && post.getTitle()!=null && post.getFul_text()!=null ) {
+        if(post!=null && post.getTitle()!=null && post.getFul_text()!=null && post.getAnons()!=null) {
             if(post.getId() > 0) {
                 String update = "update post set" +
-                        " title = ?, anons = ?, ful_text = ?, views = ?" +
+                        " title = ?, anons = ?, ful_text = ?" +
                         " where id = ?";
                 getJdbcTemplate().update(update, new Object[]{
+                        post.getId(),
                         post.getTitle(),
                         post.getAnons(),
-                        post.getFul_text(),
-                        post.getViews(),
-                        post.getId()
+                        post.getFul_text()
                         }
                 );
             } else {
                 String insert = "insert into post (" +
-                        " title, anons , ful_text , views) " +
+                        " title, anons , ful_text) " +
                         " VALUES('"+post.getTitle()+"', '"
                         +post.getAnons()+"','"
-                        +post.getFul_text()+"','"
-                        +post.getViews()+"',"
-                        +post.isEnabled()+")";
+                        +post.getFul_text()+"'";
 
                 KeyHolder keyHolder = new GeneratedKeyHolder();
                 getJdbcTemplate().update(
@@ -75,7 +87,7 @@ public class PostRepositoryImpl extends BasePostImpl implements PostRepository {
                         },
                         keyHolder
                 );
-                post.setId((long) keyHolder.getKey().intValue());
+                post.setId(keyHolder.getKey().intValue());
             }
         }
     }

@@ -8,7 +8,9 @@ import com.learning.web.post.PostForm;
 
 public interface PostRepository  {
 
-    SimplePaginatedList getTitle(PostForm form);
+    SimplePaginatedList getPost(PostForm form);
+
+    Post getPostById(Integer Id);
 
     void saveOrUpdate(Post post);
 

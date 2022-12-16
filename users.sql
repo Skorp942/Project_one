@@ -20,15 +20,14 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `post`;
 CREATE TABLE `post` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `anons` tinytext NOT NULL,
   `ful_text` mediumtext DEFAULT NULL,
-  `views` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `post` VALUES ('2', 'Что-то1', 'Кратко1', 'чтооооооооооооооо-тоооооооооооооо длииииииииииинооооооооооооооооое1', '2');
+INSERT INTO `post` VALUES ('1', 'Что-то', 'Кратко', 'чтооооооооооооооо-тоооооооооооооо длииииииииииинооооооооооооооооое');

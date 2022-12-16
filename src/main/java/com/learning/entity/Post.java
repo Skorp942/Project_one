@@ -9,18 +9,17 @@ import javax.persistence.Id;
 
 
 public class Post {
-    private Long id;
+    private int id;
     private String title;
     private String anons;
     private String ful_text;
-    private int views;
 
     private boolean enabled;
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -46,14 +45,6 @@ public class Post {
 
     public void setFul_text(String ful_text) {
         this.ful_text = ful_text;
-    }
-
-    public int getViews() {
-        return views;
-    }
-
-    public void setViews(int views) {
-        this.views = views;
     }
 
     public boolean isEnabled() {

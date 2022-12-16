@@ -32,7 +32,7 @@ public class PostRepositoryImpl extends BasePostImpl implements PostRepository {
 
         StringBuilder sql2 = new StringBuilder();
 
-        sql2.append("select * from title u " + filt);
+        sql2.append("select * from post u " + filt);
 
         if (form.getPageSize() > 0) {
             sql2.append(" \nlimit ");

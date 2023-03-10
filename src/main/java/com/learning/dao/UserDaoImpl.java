@@ -72,21 +72,27 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             return (User) list.get(0);
     }
 
+    public User getUserByUsername(String username){
+        UserMapper usermapper = new UserMapper();
+        String sql = "select * from users where username = ?";
+        List list = getJdbcTemplate().query(sql, usermapper, new Object[]{username});
+        if (list.isEmpty())
+            return null;
+        else
+            return (User) list.get(0);
+    }
+
     public void saveOrUpdate(final User user) {
         if(user!=null && user.getUsername()!=null && user.getPassword()!=null ) {
             if(user.getUserId() > 0) {
-                String update = "update users set" +
-                        " username = ?, password = ?, email = ?, role = ?, enabled = ? " +
-                        " where user_id = ?";
-                getJdbcTemplate().update(update, new Object[]{
-                                user.getUsername(),
-                                user.getPassword(),
-                                user.getEmail(),
-                                user.getUserRole(),
-                                user.isEnabled(),
-                                user.getUserId()
-                    }
-                );
+                String update = "update users set username = ?, password = ?, email = ?, role = ?, enabled = ?  where user_id = ?";
+                getJdbcTemplate().update(update,
+                        user.getUsername(),
+                        user.getPassword(),
+                        user.getEmail(),
+                        user.getUserRole(),
+                        user.isEnabled(),
+                        user.getUserId());
             } else {
                 String insert = "insert into users (" +
                         " username, password , email , role , enabled ) " +

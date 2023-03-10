@@ -10,8 +10,10 @@
     <div th:each="post : ${list.list}" class="alert  alert-info mt-2">
         <td th:text="${post.title}"/>
         <p th:text="${post.anons}"/>
-        <p th:text="${post.ful_text}"/>
-        <a th:href="@{'/blog/' + ${post.id} + '.html'}">Подробно</a>
+        <div>
+                <a th:href="@{'/blog/post№' + ${post.id} + '.html'}">Подробно</a>
+                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{'/post/postEdit.html?Id=' + ${post.id}}">Редактировать</a>
+        </div>
     </div>
 </div>
 

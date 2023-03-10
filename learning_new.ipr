@@ -14,10 +14,10 @@
         <element id="directory" name="META-INF">
           <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/Project_one.war/META-INF/MANIFEST.MF" />
         </element>
-        <element id="javaee-facet-resources" facet="Project_one.main/web/Web Gradle : Project_one.war" />
+        <element id="javaee-facet-resources" facet="IdeaProjects.Project_one.main/web/Web Gradle : Project_one.war" />
         <element id="directory" name="WEB-INF">
           <element id="directory" name="classes">
-            <element id="module-output" name="Project_one.main" />
+            <element id="module-output" name="IdeaProjects.Project_one.main" />
             <element id="dir-copy" path="$PROJECT_DIR$/out/production/resources" />
           </element>
           <element id="directory" name="lib">
@@ -285,6 +285,9 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects.Project_one.iml" filepath="$PROJECT_DIR$/IdeaProjects.Project_one.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects.Project_one.main.iml" filepath="$PROJECT_DIR$/IdeaProjects.Project_one.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IdeaProjects.Project_one.test.iml" filepath="$PROJECT_DIR$/IdeaProjects.Project_one.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/Project_one.iml" filepath="$PROJECT_DIR$/Project_one.iml" />
       <module fileurl="file://$PROJECT_DIR$/Project_one.main.iml" filepath="$PROJECT_DIR$/Project_one.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/Project_one.test.iml" filepath="$PROJECT_DIR$/Project_one.test.iml" />

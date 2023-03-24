@@ -9,7 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ef37179-d7c8-4a8d-b4f6-e57e65330481" name="Changes" comment="  &lt;!-- Модальное окно --&gt;" />
+    <list default="true" id="0ef37179-d7c8-4a8d-b4f6-e57e65330481" name="Changes" comment="  &lt;!-- Модальное окно --&gt;">
+      <change beforePath="$PROJECT_DIR$/learning_new.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/learning_new.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learning_new.iws" beforeDir="false" afterPath="$PROJECT_DIR$/learning_new.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/layouts/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.min.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +39,23 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Project_one" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Project_one" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Project_one" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Project_one" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -80,10 +104,38 @@
     &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/skorp/IdeaProjects/Project_one/src/main/java/com/learning/web/post/PostEditController.java&quot;
   }
 }</component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.84">
+    <configuration name="Project_one [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.Project_one [build]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c8b1b399-3708-4830-86ac-a0376b277255" name="Changes" comment="" />
+      <changelist id="0ef37179-d7c8-4a8d-b4f6-e57e65330481" name="Changes" comment="  &lt;!-- Модальное окно --&gt;" />
       <created>1678457665506</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -92,6 +144,8 @@
       <workItem from="1678457840816" duration="56000" />
       <workItem from="1678457917842" duration="36000" />
       <workItem from="1678457976288" duration="997000" />
+      <workItem from="1679665276404" duration="152000" />
+      <workItem from="1679669302466" duration="1186000" />
     </task>
     <task id="LOCAL-00001" summary="Исправить ошибку с ролью!!!">
       <created>1678458200899</created>
@@ -100,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678458200899</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="  &lt;!-- Модальное окно --&gt;">
+      <created>1679664656690</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679664656690</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,7 +178,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master1" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -131,6 +192,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Исправить ошибку с ролью!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправить ошибку с ролью!!!" />
+    <MESSAGE value="  &lt;!-- Модальное окно --&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="  &lt;!-- Модальное окно --&gt;" />
   </component>
 </project>

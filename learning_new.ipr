@@ -147,10 +147,15 @@
           </list>
         </option>
       </inspection_tool>
-      <inspection_tool class="com.haulmont.jpb.CompositeIdClassSerializable" enabled="true" level="WARNING" enabled_by_default="true">
-        <option name="j">
-          <Project />
+      <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+        <option name="myValues">
+          <value>
+            <list size="1">
+              <item index="0" class="java.lang.String" itemvalue="th:each" />
+            </list>
+          </value>
         </option>
+        <option name="myCustomValuesEnabled" value="true" />
       </inspection_tool>
     </profile>
     <version value="1.0" />
@@ -427,6 +432,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/blog-main.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/blog.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/layouts" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user/userEdit.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user" />
       </map>
     </option>

@@ -46,9 +46,12 @@
             <table class="table table-striped">
                 <thead bgcolor="#3675AB">
                     <tr>
-                        <th class="action-button">
+                        <th>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userEditDialog"><i class="bi bi-plus-circle"></i></button>
+                            <!--
                             <a sec:authorize="hasRole('ROLE_ADMIN')" href="/user/storeEdit.html"
                                th:href="@{'/user/userEdit.html?userId='}"><i sec:authorize="hasRole('ROLE_ADMIN')" class="fa fa-plus-circle" aria-hidden="true" title="Добавить"></i></a>
+                               -->
                         </th>
                         <th>Имя пользователя</th>
                     </tr>
@@ -56,11 +59,11 @@
                 <tbody>
                     <tr th:each="user : ${list.list}">
                         <td >
-                            <button id="edit-user" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#userEditDialog" th:data-userId="${user.id}"><i class="fas fa-edit"></i></button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" th:data="${user.userId}"><i class="bi bi-pencil"></i></button>
                             <!--
                             <a sec:authorize="hasRole('ROLE_ADMIN')" href="/user/storeEdit.html"
                                th:href="@{'/user/userEdit.html?userId=' + ${user.userId}}"><i class='fa fa-pencil' aria-hidden='true' title="Редактировать"></i></a>
-                            -->>
+                            -->
                             <a sec:authorize="hasRole('ROLE_ADMIN')" href="/user/storeDelete.html"
                                th:href="@{'/user/userDelete.html?userId=' + ${user.userId}}"><i class='fa fa-remove' aria-hidden='true' title="Удалить"></i></a>
 
@@ -69,37 +72,55 @@
                     </tr>
                 </tbody>
             </table>
-            <!--Модальное окно-->>
-            <div class="modal fade" id="userEditDialog" tabindex="-1" role="dialog" aria-labelledby="userEditDialogLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+            <!--Модальное окно-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="userEditDialogLabel">Edit user</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                            <h5 class="modal-title" id="exampleModalLabel">Новое сообщение</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                         </div>
                         <div class="modal-body">
                             <form>
-                                <input type="hidden" id="user-id"></input>
-                                <div class="form-group">
-                                    <label for="user-name" class="col-form-label">User name</label>
-                                    <input type="text" class="form-control" id="user-name"></input>
+                                <div class="mb-3">
+                                    <label for="username" class="col-form-label">Получатель:</label>
+                                    <input id="username" type="text" class="form-control" />
                                 </div>
-                                <div class="form-group">
-                                    <label for="user-password" class="col-form-label">Password</label>
-                                    <input type="password" class="form-control" id="user-password"></input>
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Сообщение:</label>
+                                    <input class="form-control" id="message-text"/>
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button id="save-user-button" type="button" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                            <button type="button" class="btn btn-primary">Отправить сообщение</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <!---->>
+            <!---->
+            <script>
+                var exampleModal = document.getElementById('exampleModal')
+                exampleModal.addEventListener('show.bs.modal', function (event) {
+                    // Кнопка, запускающая модальное окно
+                    var button = event.relatedTarget
+                    // Извлечь информацию из атрибутов data-bs- *
+                    var userId = button.getAttribute('data')
+                    if (userId) {
+                        $.get({
+                            url: '/user/getUser.json?userId=' + userId,
+                            success: (data) => {
+                                let modal = $(this)
+                                modal.find('#username').val(data.username)
+                            },
+                            error: (err) => {
+                                alert(err);
+                            }
+                        });
+                    }
+                })
+            </script>
             <div th:include='layouts/pagination :: paginationbar' ></div>
         </div>
     </div>

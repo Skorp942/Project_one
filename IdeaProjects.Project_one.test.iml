@@ -60,6 +60,9 @@
     <orderEntry type="library" name="Gradle: javax.persistence:javax.persistence-api:2.2" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-commons-core:1.4.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-thymeleaf:2.7.6" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.14.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.14.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.14.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:jsp-api:6.0.53" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:el-api:6.0.53" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:servlet-api:6.0.53" level="project" />

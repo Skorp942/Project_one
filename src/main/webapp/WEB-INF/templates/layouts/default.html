@@ -11,6 +11,7 @@
             <link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.min.css"/>
             <link rel="stylesheet" type="text/css" href="/css/awesome/css/font-awesome.min.css"/>
             <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+            <link rel="stylesheet" type="text/css" href="/bootstrap-icons-1.10.3/bootstrap-icons.css"/>
 
             <script src="/js/bootstrap.js"></script>
 
@@ -38,7 +39,7 @@
                   <ul class="nav nav-tabs">
                         <li class="nav-item"><a href="/index.html" class="nav-link" aria-current="page">Главная</a></li>
                         <li class="nav-item"><a href="/blog.html" class="nav-link">Блог</a></li>
-                        <li class="nav-item"><a href="/login.html" class="nav-link">Вход</a></li>
+                        <li sec:authorize="!isAuthenticated()" class="nav-item"><a href="/login.html" class="nav-link">Вход</a></li>
                   </ul>
             </header>
       </div>

@@ -9,13 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ef37179-d7c8-4a8d-b4f6-e57e65330481" name="Changes" comment="  &lt;!-- Модальное окно --&gt;">
+    <list default="true" id="0ef37179-d7c8-4a8d-b4f6-e57e65330481" name="Changes" comment="  &lt;!-- Модальное окно 0.5 --&gt;">
+      <change beforePath="$PROJECT_DIR$/IdeaProjects.Project_one.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects.Project_one.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects.Project_one.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects.Project_one.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/learning_new.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/learning_new.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/learning_new.iws" beforeDir="false" afterPath="$PROJECT_DIR$/learning_new.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/layouts/default.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +148,11 @@
       <workItem from="1678457917842" duration="36000" />
       <workItem from="1678457976288" duration="997000" />
       <workItem from="1679665276404" duration="152000" />
-      <workItem from="1679669302466" duration="1186000" />
+      <workItem from="1679669302466" duration="1251000" />
+      <workItem from="1679719561874" duration="1223000" />
+      <workItem from="1679731594183" duration="2996000" />
+      <workItem from="1679745939295" duration="3686000" />
+      <workItem from="1679819748452" duration="6949000" />
     </task>
     <task id="LOCAL-00001" summary="Исправить ошибку с ролью!!!">
       <created>1678458200899</created>
@@ -161,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679664656690</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="  &lt;!-- Модальное окно 0.5 --&gt;">
+      <created>1679670510290</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679670510290</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +207,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Исправить ошибку с ролью!!!" />
     <MESSAGE value="  &lt;!-- Модальное окно --&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="  &lt;!-- Модальное окно --&gt;" />
+    <MESSAGE value="  &lt;!-- Модальное окно 0.5 --&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="  &lt;!-- Модальное окно 0.5 --&gt;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/learning/web/user/UserRestController.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

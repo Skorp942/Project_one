@@ -65,6 +65,9 @@
             <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-thymeleaf:2.7.6" />
             <element id="library" level="project" name="Gradle: com.mchange:mchange-commons-java:0.2.20" />
             <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:8.0.29" />
+            <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.14.2" />
+            <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.14.2" />
+            <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.14.2" />
           </element>
         </element>
       </root>
@@ -150,8 +153,10 @@
       <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
         <option name="myValues">
           <value>
-            <list size="1">
+            <list size="3">
               <item index="0" class="java.lang.String" itemvalue="th:each" />
+              <item index="1" class="java.lang.String" itemvalue="th:data" />
+              <item index="2" class="java.lang.String" itemvalue="th:data-userid" />
             </list>
           </value>
         </option>
@@ -302,9 +307,9 @@
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="Tomcat 8.5.84" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" editBeforeRun="true" APPLICATION_SERVER_NAME="Tomcat 8.5.84" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
+    <configuration default="false" name="Tomcat 8.5.84" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" activateToolWindowBeforeRun="false" APPLICATION_SERVER_NAME="Tomcat 8.5.84" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="Gradle : Project_one.war">
           <settings>
@@ -434,6 +439,7 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/blog.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/layouts" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user/userEdit.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user/users.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user" />
       </map>
     </option>
   </component>
@@ -460,6 +466,39 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/4a4b6d692e17846a9f3da036438a7ac491d3c814/aopalliance-1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.14.2">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.14.2/a7aae9525864930723e3453ab799521fdfd9d873/jackson-annotations-2.14.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.14.2/3d74e455fa89503ce195b9cb87a29612060f9cc8/jackson-annotations-2.14.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.fasterxml.jackson.core:jackson-core:2.14.2">
+      <ANNOTATIONS>
+        <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/externalAnnotations/com/fasterxml/jackson/core/jackson-core/2.9.6-an1/jackson-core-2.9.6-an1-annotations.zip!/" />
+      </ANNOTATIONS>
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.14.2/f804090e6399ce0cf78242db086017512dd71fcc/jackson-core-2.14.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.14.2/8217d78341a78cd2fbc69f26372e40d38f8767da/jackson-core-2.14.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.14.2">
+      <ANNOTATIONS>
+        <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/externalAnnotations/com/fasterxml/jackson/core/jackson-databind/2.9.6-an1/jackson-databind-2.9.6-an1-annotations.zip!/" />
+      </ANNOTATIONS>
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.14.2/1e71fddbc80bb86f71a6345ac1e8ab8a00e7134/jackson-databind-2.14.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.14.2/e3c1c58faa2bc0d8c3b40e478102eb2ffba07ce3/jackson-databind-2.14.2-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Gradle: com.mchange:c3p0:0.9.5.5">

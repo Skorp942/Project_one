@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ef37179-d7c8-4a8d-b4f6-e57e65330481" name="Changes" comment="  &lt;!-- Модальное окно 1.0--&gt;">
-      <change beforePath="$PROJECT_DIR$/learning_new.iws" beforeDir="false" afterPath="$PROJECT_DIR$/learning_new.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user/users.html" afterDir="false" />
-    </list>
+    <list default="true" id="0ef37179-d7c8-4a8d-b4f6-e57e65330481" name="Changes" comment="GetUser json1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +57,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -100,6 +104,11 @@
     &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/skorp/IdeaProjects/Project_one/src/main/java/com/learning/web/post/PostEditController.java&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.learning.web.user" />
+    </key>
+  </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.84">
     <configuration name="Project_one [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -148,6 +157,7 @@
       <workItem from="1679819748452" duration="7154000" />
       <workItem from="1679905163784" duration="1816000" />
       <workItem from="1679920646392" duration="1588000" />
+      <workItem from="1679928378429" duration="370000" />
     </task>
     <task id="LOCAL-00001" summary="Исправить ошибку с ролью!!!">
       <created>1678458200899</created>
@@ -177,7 +187,35 @@
       <option name="project" value="LOCAL" />
       <updated>1679826951257</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="GetUser json">
+      <created>1679928416081</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679928416081</updated>
+    </task>
+    <task id="LOCAL-00006" summary="GetUser json">
+      <created>1679928611181</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679928611181</updated>
+    </task>
+    <task id="LOCAL-00007" summary="GetUser json">
+      <created>1679928705083</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679928705083</updated>
+    </task>
+    <task id="LOCAL-00008" summary="GetUser json1">
+      <created>1679928741807</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679928741807</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,18 +249,12 @@
     <MESSAGE value="  &lt;!-- Модальное окно --&gt;" />
     <MESSAGE value="  &lt;!-- Модальное окно 0.5 --&gt;" />
     <MESSAGE value="  &lt;!-- Модальное окно 1.0--&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="  &lt;!-- Модальное окно 1.0--&gt;" />
+    <MESSAGE value="GetUser json 1" />
+    <MESSAGE value="GetUser json" />
+    <MESSAGE value="GetUser json1" />
+    <option name="LAST_COMMIT_MESSAGE" value="GetUser json1" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/learning/web/user/UserGetController.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.learning.dao.UserDaoImpl" memberName="logger" />

@@ -47,7 +47,7 @@
                 <thead bgcolor="#3675AB">
                     <tr>
                         <th>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userEditDialog"><i class="bi bi-plus-circle"></i></button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal"><i class="bi bi-plus-circle"></i></button>
                             <!--
                             <a sec:authorize="hasRole('ROLE_ADMIN')" href="/user/storeEdit.html"
                                th:href="@{'/user/userEdit.html?userId='}"><i sec:authorize="hasRole('ROLE_ADMIN')" class="fa fa-plus-circle" aria-hidden="true" title="Добавить"></i></a>
@@ -59,7 +59,7 @@
                 <tbody>
                     <tr th:each="user : ${list.list}">
                         <td >
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" th:data="${user.userId}"><i class="bi bi-pencil"></i></button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal" th:data="${user.userId}"><i class="bi bi-pencil"></i></button>
                             <!--
                             <a sec:authorize="hasRole('ROLE_ADMIN')" href="/user/storeEdit.html"
                                th:href="@{'/user/userEdit.html?userId=' + ${user.userId}}"><i class='fa fa-pencil' aria-hidden='true' title="Редактировать"></i></a>
@@ -73,7 +73,7 @@
                 </tbody>
             </table>
             <!--Модальное окно-->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -83,12 +83,22 @@
                         <div class="modal-body">
                             <form>
                                 <div class="mb-3">
-                                    <label for="username" class="col-form-label">Получатель:</label>
+                                    <label for="username" class="col-form-label">Имя:</label>
                                     <input id="username" type="text" class="form-control" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message-text" class="col-form-label">Сообщение:</label>
-                                    <input class="form-control" id="message-text"/>
+                                    <label for="password" class="col-form-label">Пароль:</label>
+                                    <input id="password" class="form-control"/>
+                                    <label for="email" class="col-form-label">Email:</label>
+                                    <input id="email" type="text" class="form-control"/>
+                                    <label for="userRole" class="col-form-label">Роль:</label>
+                                    <select id="userRole" type="text" class="form-control">
+                                        <option value="ROLE_ADMIN">Админ</option>
+                                        <option value="ROLE_USER">Пользователь</option>
+                                    </select>
+                                    <label for="enabled" class="col-form-label"> Вкл/Выкл</label>
+                                    <select id="enabled" type="text" class="form-control">
+                                        <option value="True">Вкл</option>
+                                        <option value="False">Выкл</option>
+                                    </select>
                                 </div>
                             </form>
                         </div>
@@ -101,7 +111,7 @@
             </div>
             <!---->
             <script>
-                var exampleModal = document.getElementById('exampleModal')
+                var exampleModal = document.getElementById('userModal')
                 exampleModal.addEventListener('show.bs.modal', function (event) {
                     // Кнопка, запускающая модальное окно
                     var button = event.relatedTarget
@@ -113,6 +123,10 @@
                             success: (data) => {
                                 let modal = $(this)
                                 modal.find('#username').val(data.username)
+                                modal.find('#password').val(data.password)
+                                modal.find('#email').val(data.email)
+                                modal.find('#userRole').val(data.userRole)
+                                modal.find('#enabled').val(data.enabled)
                             },
                             error: (err) => {
                                 alert(err);

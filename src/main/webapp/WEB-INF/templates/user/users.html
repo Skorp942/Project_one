@@ -83,6 +83,7 @@
                         <div class="modal-body">
                             <form>
                                 <div class="mb-3">
+                                    <input type="hidden" id="userId"/>
                                     <label for="username" class="col-form-label">Имя:</label>
                                     <input id="username" type="text" class="form-control" />
                                     <label for="password" class="col-form-label">Пароль:</label>
@@ -96,15 +97,15 @@
                                     </select>
                                     <label for="enabled" class="col-form-label"> Вкл/Выкл</label>
                                     <select id="enabled" type="text" class="form-control">
-                                        <option value="True">Вкл</option>
-                                        <option value="False">Выкл</option>
+                                        <option value="true">Вкл</option>
+                                        <option value="false">Выкл</option>
                                     </select>
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                            <button type="button" class="btn btn-primary">Отправить сообщение</button>
+                            <button type="button" id="save-user-button" class="btn btn-primary">Сохранить</button>
+                            <button type="button" id="close-user-button" class="btn btn-primary" data-bs-dismiss="modal">Закрыть</button>
                         </div>
                     </div>
                 </div>
@@ -113,20 +114,22 @@
             <script>
                 var exampleModal = document.getElementById('userModal')
                 exampleModal.addEventListener('show.bs.modal', function (event) {
-                    // Кнопка, запускающая модальное окно
                     var button = event.relatedTarget
-                    // Извлечь информацию из атрибутов data-bs- *
                     var userId = button.getAttribute('data')
                     if (userId) {
                         $.get({
                             url: '/user/getUser.json?userId=' + userId,
                             success: (data) => {
                                 let modal = $(this)
+                                modal.find('#userId').val(data.userId)
                                 modal.find('#username').val(data.username)
                                 modal.find('#password').val(data.password)
                                 modal.find('#email').val(data.email)
                                 modal.find('#userRole').val(data.userRole)
-                                modal.find('#enabled').val(data.enabled)
+                                if (data.enabled == true)
+                                    modal.find('#enabled').val("true")
+                                else
+                                    modal.find('#enabled').val("false")
                             },
                             error: (err) => {
                                 alert(err);
@@ -134,6 +137,38 @@
                         });
                     }
                 })
+
+                $('#save-user-button').click(function() {
+                    let modal = $('#userModal')
+                    let user = {
+                        userId: modal.find('#userId').val(),
+                        username: modal.find('#username').val(),
+                        password: modal.find('#password').val(),
+                        email: modal.find('#email').val(),
+                        userRole: modal.find('#userRole').val(),
+                        enabled: modal.find('#enabled').val()
+                    };
+                    $.ajax({
+                        url: '/user/postUser.json',
+                        type: 'POST',
+                        data: JSON.stringify(user),
+                        contentType: "application/json;",
+                        dataType: "json",
+                        success: () => {
+                            location.reload()
+                        },
+                        error: (err) => {
+                            alert(err);
+                        }
+                    })
+                    modal.dispose()
+                });
+
+                $('#close-user-button').click(function() {
+                    var modal = $('#userModal')
+                    modal.dispose()
+                });
+
             </script>
             <div th:include='layouts/pagination :: paginationbar' ></div>
         </div>

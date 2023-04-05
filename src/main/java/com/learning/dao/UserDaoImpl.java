@@ -6,16 +6,13 @@ import com.learning.util.paginated.PaginatedListHelper;
 import com.learning.util.paginated.SimplePaginatedList;
 import com.learning.web.user.UsersForm;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
 
 @Repository("userDao")
@@ -82,7 +79,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             return (User) list.get(0);
     }
 
-    public void saveOrUpdate(final User user) {
+    public User saveOrUpdate(final User user) {
         if(user!=null && user.getUsername()!=null && user.getPassword()!=null ) {
             if(user.getUserId() > 0) {
                 String update = "update users set username = ?, password = ?, email = ?, role = ?, enabled = ?  where user_id = ?";
@@ -113,6 +110,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
                 user.setUserId(keyHolder.getKey().intValue());
             }
         }
+        return user;
     }
 
     public void deleteUser(Integer userId) {

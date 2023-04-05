@@ -10,7 +10,7 @@ public interface UserDao extends UserDetailsService {
     User getUserByUserId(Integer userId);
     User getUserByEmail(String email);
     public User getUserByUsername(String username);
-    void saveOrUpdate(User user);
+    User saveOrUpdate(User user);
     void deleteUser(Integer userId);
     boolean isUniqueUser(User user);
 }

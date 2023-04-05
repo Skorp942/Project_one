@@ -48,10 +48,6 @@
                     <tr>
                         <th>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal"><i class="bi bi-plus-circle"></i></button>
-                            <!--
-                            <a sec:authorize="hasRole('ROLE_ADMIN')" href="/user/storeEdit.html"
-                               th:href="@{'/user/userEdit.html?userId='}"><i sec:authorize="hasRole('ROLE_ADMIN')" class="fa fa-plus-circle" aria-hidden="true" title="Добавить"></i></a>
-                               -->
                         </th>
                         <th>Имя пользователя</th>
                     </tr>
@@ -60,13 +56,7 @@
                     <tr th:each="user : ${list.list}">
                         <td >
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal" th:data="${user.userId}"><i class="bi bi-pencil"></i></button>
-                            <!--
-                            <a sec:authorize="hasRole('ROLE_ADMIN')" href="/user/storeEdit.html"
-                               th:href="@{'/user/userEdit.html?userId=' + ${user.userId}}"><i class='fa fa-pencil' aria-hidden='true' title="Редактировать"></i></a>
-                            -->
-                            <a sec:authorize="hasRole('ROLE_ADMIN')" href="/user/storeDelete.html"
-                               th:href="@{'/user/userDelete.html?userId=' + ${user.userId}}"><i class='fa fa-remove' aria-hidden='true' title="Удалить"></i></a>
-
+                            <button type="button" class="btn btn-danger"  th:data="${user.userId}"><i class="bi bi-x-circle"></i></button>
                         </td>
                         <td th:text="${user.username}">username</td>
                     </tr>
@@ -105,7 +95,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" id="save-user-button" class="btn btn-primary">Сохранить</button>
-                            <button type="button" id="close-user-button" class="btn btn-primary" data-bs-dismiss="modal">Закрыть</button>
+                            <button type="button" id="close-modal-button" class="btn btn-primary">Закрыть</button>
                         </div>
                     </div>
                 </div>
@@ -117,10 +107,13 @@
                     var button = event.relatedTarget
                     var userId = button.getAttribute('data')
                     if (userId) {
-                        $.get({
+                        $.ajax({
                             url: '/user/getUser.json?userId=' + userId,
-                            success: (data) => {
-                                let modal = $(this)
+                            method: 'get',
+                            dataType: 'html',
+                            data: {text: 'Текст'},
+                            success: function(data){
+                                var modal = $(this)
                                 modal.find('#userId').val(data.userId)
                                 modal.find('#username').val(data.username)
                                 modal.find('#password').val(data.password)
@@ -139,8 +132,8 @@
                 })
 
                 $('#save-user-button').click(function() {
-                    let modal = $('#userModal')
-                    let user = {
+                    var modal = $('#userModal')
+                    var user = {
                         userId: modal.find('#userId').val(),
                         username: modal.find('#username').val(),
                         password: modal.find('#password').val(),
@@ -151,9 +144,9 @@
                     $.ajax({
                         url: '/user/postUser.json',
                         type: 'POST',
+                        dataType: "json",
                         data: JSON.stringify(user),
                         contentType: "application/json;",
-                        dataType: "json",
                         success: () => {
                             location.reload()
                         },
@@ -164,9 +157,12 @@
                     modal.dispose()
                 });
 
-                $('#close-user-button').click(function() {
-                    var modal = $('#userModal')
+                $('#close-modal-button').click(function() {
+                    var myModal = document.getElementById('userModal');
+                    var modal = bootstrap.Modal.getInstance(myModal)
+                    modal.hide();
                     modal.dispose()
+                    location.reload()
                 });
 
             </script>

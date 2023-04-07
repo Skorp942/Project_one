@@ -9,12 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ef37179-d7c8-4a8d-b4f6-e57e65330481" name="Changes" comment="PostUser Json&#10;разобраться с закрытием и отчисткой модального окна">
+    <list default="true" id="0ef37179-d7c8-4a8d-b4f6-e57e65330481" name="Changes" comment="сделать ошибки ввода пользователя и удаление">
       <change beforePath="$PROJECT_DIR$/learning_new.iws" beforeDir="false" afterPath="$PROJECT_DIR$/learning_new.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learning/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learning/dao/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/web/user/UserGetJsonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learning/web/user/UserGetJsonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/web/user/UserPostJsonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learning/web/user/UserPostJsonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/layouts/default.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/user/users.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +174,10 @@
       <workItem from="1680526852461" duration="75000" />
       <workItem from="1680606717887" duration="1240000" />
       <workItem from="1680695069182" duration="362000" />
-      <workItem from="1680695483121" duration="2794000" />
+      <workItem from="1680695483121" duration="3870000" />
+      <workItem from="1680783014216" duration="2463000" />
+      <workItem from="1680785508732" duration="915000" />
+      <workItem from="1680874170192" duration="464000" />
     </task>
     <task id="LOCAL-00001" summary="Исправить ошибку с ролью!!!">
       <created>1678458200899</created>
@@ -248,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680442209417</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="сделать ошибки ввода пользователя и удаление">
+      <created>1680701588139</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680701588139</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +295,8 @@
     <MESSAGE value="GetUser json1" />
     <MESSAGE value="UserGetJsonController" />
     <MESSAGE value="PostUser Json&#10;разобраться с закрытием и отчисткой модального окна" />
-    <option name="LAST_COMMIT_MESSAGE" value="PostUser Json&#10;разобраться с закрытием и отчисткой модального окна" />
+    <MESSAGE value="сделать ошибки ввода пользователя и удаление" />
+    <option name="LAST_COMMIT_MESSAGE" value="сделать ошибки ввода пользователя и удаление" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

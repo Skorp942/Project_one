@@ -67,7 +67,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Новое сообщение</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Добавление / редактирование пользователя</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                         </div>
                         <div class="modal-body">
@@ -93,6 +93,7 @@
                                 </div>
                             </form>
                         </div>
+                        <tr><td colspan="2"><div id="info" style="color: green;"></div></td></tr>
                         <div class="modal-footer">
                             <button type="button" id="save-user-button" class="btn btn-primary">Сохранить</button>
                             <button type="button" id="close-modal-button" class="btn btn-primary">Закрыть</button>
@@ -107,12 +108,9 @@
                     var button = event.relatedTarget
                     var userId = button.getAttribute('data')
                     if (userId) {
-                        $.ajax({
+                        $.get({
                             url: '/user/getUser.json?userId=' + userId,
-                            method: 'get',
-                            dataType: 'html',
-                            data: {text: 'Текст'},
-                            success: function(data){
+                            success: (data) => {
                                 var modal = $(this)
                                 modal.find('#userId').val(data.userId)
                                 modal.find('#username').val(data.username)
@@ -144,11 +142,11 @@
                     $.ajax({
                         url: '/user/postUser.json',
                         type: 'POST',
-                        dataType: "json",
+                        dataType: "html",
                         data: JSON.stringify(user),
                         contentType: "application/json;",
-                        success: () => {
-                            location.reload()
+                        success: (returnText) => {
+                            alert(returnText);
                         },
                         error: (err) => {
                             alert(err);

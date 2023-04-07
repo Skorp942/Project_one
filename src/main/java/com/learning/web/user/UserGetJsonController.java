@@ -13,7 +13,9 @@ public class UserGetJsonController {
     private final UserDao userDao;
     private ObjectMapper objectMapper;
 
-    public UserGetJsonController(UserDao userDao) {this.userDao = userDao;}
+    public UserGetJsonController(UserDao userDao, ObjectMapper objectMapper) {this.userDao = userDao;
+        this.objectMapper = objectMapper;
+    }
 
     @GetMapping("/user/getUser.json")
     public User getUserById(@RequestParam Integer userId) {

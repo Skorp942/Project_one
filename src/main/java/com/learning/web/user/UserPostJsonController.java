@@ -21,9 +21,11 @@ public class UserPostJsonController {
 
     @PostMapping("/user/postUser.json")
     @ResponseBody
-    public User  save(@RequestBody  User user) {
-        Errors errors = null;
-        //userEditValidator.validate(user, errors);
-        return userDao.saveOrUpdate(user);
+    public String save(@RequestBody  User user) {
+        String returnText;
+        //userEditValidator.validate(user);
+        userDao.saveOrUpdate(user);
+        returnText = "Добавлено";
+        return returnText;
     }
 }

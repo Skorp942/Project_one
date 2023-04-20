@@ -63,11 +63,11 @@
             <element id="library" level="project" name="Gradle: javax.persistence:javax.persistence-api:2.2" />
             <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-commons-core:1.4.1.RELEASE" />
             <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-thymeleaf:2.7.6" />
-            <element id="library" level="project" name="Gradle: com.mchange:mchange-commons-java:0.2.20" />
-            <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:8.0.29" />
             <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.14.2" />
             <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.14.2" />
             <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.14.2" />
+            <element id="library" level="project" name="Gradle: com.mchange:mchange-commons-java:0.2.20" />
+            <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:8.0.29" />
           </element>
         </element>
       </root>
@@ -111,6 +111,9 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/learning/web/user/UserPostJsonController.java" charset="UTF-8" />
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$" />
@@ -142,6 +145,11 @@
   <component name="InspectionProjectProfileManager">
     <profile version="1.0">
       <option name="myName" value="Project Default" />
+      <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+        <Languages>
+          <language minSize="64" name="Java" />
+        </Languages>
+      </inspection_tool>
       <inspection_tool class="GradlePackageUpdate" enabled="true" level="WEAK WARNING" enabled_by_default="true">
         <option name="excludeList">
           <list>

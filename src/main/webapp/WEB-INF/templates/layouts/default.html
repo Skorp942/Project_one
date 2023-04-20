@@ -26,13 +26,9 @@
             </ul>
 
             <ul class="nav navbar-nav">
-                  <li><a sec:authorize="hasRole('ROLE_ADMIN')" href="/post/posts.html">Посты</a></li>
+                  <li><a sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_EDITOR')" href="/post/posts.html">Посты</a></li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right">
-                  <li><a sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')"
-                         href="/logout.html">Выход <span sec:authentication="name"></span></a></li>
-            </ul>
       </nav>
 
       
@@ -42,6 +38,7 @@
                         <li class="nav-item"><a href="/index.html" class="nav-link" aria-current="page">Главная</a></li>
                         <li class="nav-item"><a href="/blog.html" class="nav-link">Блог</a></li>
                         <li sec:authorize="!isAuthenticated()" class="nav-item"><a href="/login.html" class="nav-link">Вход</a></li>
+                        <li sec:authorize="isAuthenticated()" class="nav-item"><a href="/logout.html" class="nav-link">Выход <span sec:authentication="name"></span></a></li>
                   </ul>
             </header>
       </div>

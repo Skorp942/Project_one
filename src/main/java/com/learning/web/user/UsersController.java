@@ -1,13 +1,17 @@
 package com.learning.web.user;
 
 import com.learning.dao.UserDao;
-import com.learning.entity.User;
+import com.learning.dto.JsonUserDto;
+import com.learning.dto.JsonUsersDto;
 import com.learning.util.paginated.SimplePaginatedList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by ulyanov on 29.09.16.
@@ -34,34 +38,14 @@ public class UsersController {
         model.addAttribute("command", command);
         return "user/users";
     }
-
-    @RequestMapping("user/users.html?Username={username}")
-    public String searchUser(
+    @RequestMapping(value="/user/updateListUsers.html", method=RequestMethod.POST)
+    public String sendHtmlFragment(
             Model model,
-            @ModelAttribute("UsersController.command") UsersForm command,
-            @PathVariable int username
+            @ModelAttribute("UsersController.command") UsersForm command
     ){
-
+        SimplePaginatedList list = userDao.getUsers(command);
+        model.addAttribute("list", list);
         model.addAttribute("command", command);
-        return "redirect:/user/users.html";
+        return "/user/fragmentListUsers";
     }
-
-    @RequestMapping(value = "/user/users.html", method = RequestMethod.POST, params = "_search")
-    public String searchUser(
-            Model model,
-            @ModelAttribute("command") User command,
-            BindingResult result
-    ){
-        model.addAttribute("command", command);
-        return "user/users.html?Username=" + command.getUsername();
-    }
-
-    @RequestMapping("/user/userDelete.html")
-    public String delUser(@RequestParam(required = false) Integer userId){
-        if (userId!=null){
-            userDao.deleteUser(userId);
-        }
-        return "redirect:/user/users.html";
-    }
-
 }

@@ -1,6 +1,7 @@
 package com.learning.dao;
 
 import com.learning.dao.mapper.UserMapper;
+import com.learning.dao.mapper.UsersMapper;
 import com.learning.entity.User;
 import com.learning.util.paginated.PaginatedListHelper;
 import com.learning.util.paginated.SimplePaginatedList;
@@ -42,7 +43,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
             sql2.append(form.getPageSize());
         }
 
-        List list = getJdbcTemplate().query(sql2.toString(), new UserMapper());
+        List list = getJdbcTemplate().query(sql2.toString(), new UsersMapper());
         if (total == -1)
             total = list.size();
         return PaginatedListHelper.getPaginatedList(list, total, form);

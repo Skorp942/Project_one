@@ -8,6 +8,7 @@ public class JsonMessageDto {
     private List<String> errors  = new ArrayList<>();
     private String message;
 
+    private String id;
 
     private List<String> errorCode  = new ArrayList<>();
 
@@ -30,4 +31,8 @@ public class JsonMessageDto {
     public List<String> getErrorCode() {return errorCode;}
 
     public void setErrorCode(List<String> errorCode) {this.errorCode = errorCode;}
+
+    public String getId() {return id;}
+
+    public void setId(String id) {this.id = id;}
 }

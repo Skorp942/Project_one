@@ -27,8 +27,13 @@ public class UserPostJsonController {
         JsonMessageDto json =  new JsonMessageDto();
         userEditValidator.validate(user, error);
         if (!error.hasErrors()) {
+            if(user.getUserId()==0){
+                json.setMessage("Добавленно");
+            }else{
+                json.setMessage("Исполнено");
+            }
             userDao.saveOrUpdate(user);
-            json.setMessage("Добавлено");
+            json.setId(String.valueOf(user.getUserId()));
         } else{
           error.getAllErrors().stream().forEach(e -> {json.getErrors().add(e.getDefaultMessage());json.getErrorCode().add(e.getCode());});
         }
